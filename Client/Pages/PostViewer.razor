@@ -1,0 +1,29 @@
+﻿@page "/posts/{Id:guid}"
+@using camedx_blog.Shared;
+@inject camedx_blog.Client.Services.IBlogPostService BlogPostService
+
+@if(post == null)
+{
+    <span>Loading</span>
+}
+else
+{
+    <h3>@post.Title</h3>
+    <h4><i>@post.ShortDescription</i></h4>
+    <hr />
+    <h5>@post.Content</h5>
+}
+
+
+@code {
+    private BlogPost? post;
+
+    [Parameter]
+    public Guid Id { get; set; }
+
+    protected override async Task OnInitializedAsync()
+    {
+        post = await BlogPostService.GetBlogPostById(Id);
+    }
+
+}

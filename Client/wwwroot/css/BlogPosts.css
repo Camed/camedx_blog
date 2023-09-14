@@ -1,0 +1,29 @@
+﻿
+.post{
+    margin: 20px;
+}
+
+.postTitle{
+    font-family: 'Segoe UI';
+    font-size: larger;
+}
+
+.postDescription{
+    font-family: 'Segoe UI';
+    font-size: large;
+}
+
+.postContent{
+     font-family: Arial, Helvetica, sans-serif;
+     font-size: medium;
+}
+
+.customHr {
+    display: block;
+    margin-top: 0.5em;
+    margin-bottom: 0.5em;
+    margin-left: auto;
+    margin-right: auto;
+    border-style: inset;
+    border-width: 1px;
+}

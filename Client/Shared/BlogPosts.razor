@@ -1,0 +1,38 @@
+﻿@using camedx_blog.Shared;
+@inject camedx_blog.Client.Services.IBlogPostService BlogPostService
+
+<head>
+    <link href="css/BlogPosts.css" rel="stylesheet" />
+</head>
+
+@if(Posts.Count == 0)
+{
+    <span>Loading...</span>
+}
+else
+{
+    @foreach (var post in Posts)
+    {
+        <div class="post">
+            <div class="PostTitle">
+                <a href="/posts/@post.Id">@post.Title</a>
+            </div>
+            <div class="customHr" />
+            <div class="postDescription">
+                @post.ShortDescription
+            </div>
+            <div class="customHr" />
+        </div>
+        <hr />
+    }
+}
+
+
+@code {
+    private List<BlogPost> Posts = new List<BlogPost>();
+
+    protected override async Task OnInitializedAsync()
+    {
+        Posts =  await BlogPostService.GetBlogPosts();
+    }
+}
