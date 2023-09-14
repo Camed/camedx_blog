@@ -361,3 +361,6 @@ MigrationBackup/
 
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
+/Server/camedx_blog.db
+/Server/camedx_blog.db-shm
+/Server/camedx_blog.db-wal
